@@ -1,0 +1,21 @@
+<view class="section_title" >麦加登录</view>
+
+<view class="name">
+    <label class="name_label">用户名:</label>
+    <input class="name_input" bindchange="nameChange" placeholder="输入用户名称" />
+</view>
+
+<view class="password">
+    <label class="pwd_label">密码:</label>
+    <input class="pwd_input" password="{{true}}" bindchange="pwdChange" placeholder="输入用户密码" />
+</view>
+
+<view class="login_view">
+    <button class="login" disabled="{{disabled}}" bindtap="login" >登录</button>
+</view>
+
+<view>
+    <toast hidden="{{toastHidden}}">{{toast_title}}</toast>
+</view>
+
+

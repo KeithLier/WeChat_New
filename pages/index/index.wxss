@@ -1,0 +1,41 @@
+.section_title{
+    text-align: center;
+    margin-top: 100rpx;
+}
+.name{
+    margin-top: 100rpx;
+}
+.name_label{
+    margin-left: 50rpx;
+}
+.name_input{
+    margin-top: 20rpx;
+    margin-left: 50rpx;
+    margin-right: 50rpx;
+    background-color: #F5F5F5;
+}
+
+.password{
+    margin-top: 50rpx;
+}
+
+.pwd_label{
+    margin-left: 50rpx;
+}
+.pwd_input{
+    margin-top: 20rpx;
+    margin-left: 50rpx;
+    margin-right: 50rpx;
+    background-color: #F5F5F5;
+}
+
+.login_view{
+    margin-top: 100rpx;
+}
+
+.login{
+    margin-left: 100rpx;
+    margin-right: 100rpx;
+    text-align: center;
+    background-color: limegreen;
+}
