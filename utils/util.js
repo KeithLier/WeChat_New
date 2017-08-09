@@ -11,7 +11,7 @@ function getLocation(callback) {
         },
         fail: function() {
 
-        	callback(false);
+        	callback(false); 
 
         }
 
@@ -22,14 +22,14 @@ function getLocation(callback) {
 //Reverse Geocoding 根据经纬度获取城市名称
 function getCityName(latitude, longitude, callback) {
 
-    var apiURL = "http://api.map.baidu.com/geocoder?output=json&location="+ latitude + "," + longitude + "&key=37492c0ee6f924cb5e934fa08c6b1676";
-
+  var apiURL = "http://api.map.baidu.com/geocoder/v2/?location=" + latitude + "," + longitude + "&output=json&pois=1&ak=wIrHQYzT0O8SmuTc5shtVsK0HcKPRm8x";
+    console.log(apiURL);
     wx.request({
         url: apiURL,
         success: function(res) {
-
+            console.log(res.data);
             callback(res.data["result"]["addressComponent"]["city"]);
-
+            
         }
     });
 
@@ -38,7 +38,7 @@ function getCityName(latitude, longitude, callback) {
 //获取指定位置的天气信息
 function getWeatherByLocation(latitude, longitude, callback) {
 
-    var apiKey = "e32ac7453b80afc91bae6df7597ad8a1";
+  var apiKey = "e32ac7453b80afc91bae6df7597ad8a1";
     var apiURL = "https://api.darksky.net/forecast/" + apiKey + "/" + latitude + "," + longitude + "?lang=zh&units=ca";
     
     wx.request({
@@ -46,6 +46,7 @@ function getWeatherByLocation(latitude, longitude, callback) {
         success: function(res){
 
             var weatherData = parseWeatherData(res.data);
+            console.log(res.data);
             getCityName(latitude, longitude, function(city){
                 weatherData.city = city;
                 callback(weatherData);
