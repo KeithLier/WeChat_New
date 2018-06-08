@@ -25,7 +25,9 @@ Page({
   },
   globalData:{
     userInfo:null
+  },
+
+  onShareAppMessage: function() {
+    
   }
-
-
 })

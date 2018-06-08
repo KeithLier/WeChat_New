@@ -7,6 +7,10 @@ Page({
       toast_title:""
   },
 
+  onPullDownRefresh: function() {
+
+  },
+
   nameChange: function(e){
       this.setData({
           name:e.detail.value
@@ -35,6 +39,13 @@ Page({
           this.setData({
               disabled: true
           })
+      }
+  },
+
+  onShareAppMessage: function () {
+      return {
+        title:"分享吧",
+        desc: "什么东西？"
       }
   },
 
